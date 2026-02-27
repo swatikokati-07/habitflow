@@ -3003,13 +3003,11 @@
                     });
 
                 // Listen for controller change (app update)
-                let refreshing;
-                navigator.serviceWorker.addEventListener('controllerchange', () => {
-                    if (refreshing) return;
-                    refreshing = true;
-                    console.log('App updated, reloading...');
-                    window.location.reload();
-                });
+                // Disabled automatic reload to prevent continuous refresh loop
+                // Users can manually refresh if needed
+                // navigator.serviceWorker.addEventListener('controllerchange', () => {
+                //     window.location.reload();
+                // });
             });
         }
 
